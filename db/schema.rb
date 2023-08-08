@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_08_015314) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
+  create_table "lines", charset: "utf8mb4", force: :cascade do |t|
+    t.string "line_name", null: false
+    t.string "station", null: false
+    t.date "ride_time", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "targets", charset: "utf8mb4", force: :cascade do |t|
+    t.string "targets_name", null: false
+    t.string "clothes", null: false
+    t.string "age", null: false
+    t.string "resemble", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
