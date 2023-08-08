@@ -1,0 +1,81 @@
+<%= render "shared/header" %>
+
+<%= form_with model: "#", url: "#", local: true do |f| %>
+  <%= render 'shared/error_messages2', model: f.object %>
+  <div class='target-form'>
+    <h1 class='info-input-haedline'>
+      人物像入力
+    </h1>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">ニックネーム</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :targets_name, class:"input-default", id:"targetname", placeholder:"例) ドラえもん" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">服装</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :clothes, class:"input-default", id:"clothes", placeholder:"例) 黒のワンピ、ヴィトンのバック" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">年齢</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:age, Age.all, :id, :name, {}, {class:"select-box", id:"age"}) %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">誰に似てる？</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :resemble, class:"input-default", id:"resemble", placeholder:"例) Ado" %>
+    </div>
+  </div>  
+  <div class='line-form'>
+    <h1 class='info-input-haedline'>
+      路線関連入力
+    </h1>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">路線名</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :line_name, class:"input-default", id:"line-name", placeholder:"電車名でもOK" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">降車駅</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :station, class:"input-default", id:"station", placeholder:"どこで降りたか？" %>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">降車時刻</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <div class='input-getting-off-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :ride_time,
+                    class:'getting-off',
+                    id:"getting-off-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+    </div>
+    <div class='target-btn'>
+    <%= f.submit "情報を登録する" ,class:"target-red-btn" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "shared/footer" %>
