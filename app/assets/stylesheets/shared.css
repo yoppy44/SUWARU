@@ -1,0 +1,51 @@
+/* ヘッダー */
+
+* {
+  box-sizing: border-box;
+}
+
+.suwaru-header{
+  height: 100px;
+  width: 100vw;
+  background-color: hwb(61 56% 3%);
+  align-items: center;
+  padding: 20px 100px ;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo{
+	font-size: 5em;
+	text-align: start;
+	line-height: 0.95em;
+	font-weight: bold;
+	color: transparent;
+	background: repeating-linear-gradient( 2deg, #FF3D00 0% 50%, #0091EA 50% 100% );
+	-webkit-background-clip: text;
+}
+
+.user-menu{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-menu-btn{
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 2px 5px;
+  background-color: powderblue;
+}
+/* //ヘッダー */
+
+/* フッター */
+
+.root-path-btn{
+  text-decoration: none;
+}
+
+/* //フッター */
