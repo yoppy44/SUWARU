@@ -1,4 +1,4 @@
-
+<%= render "shared/header" %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   
@@ -6,7 +6,7 @@
 
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">なまえ</label>
+      <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
     <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) こほけんじ" %>
@@ -33,10 +33,10 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入れてね" %>
   </div>
 
-  <div class='register-btn'>
-    <%= f.submit "とうろく！" ,class:"register-red-btn" %>
+  <div class='devise-btn'>
+    <%= f.submit "とうろく！" ,class:"devise-red-btn" %>
   </div>
 
 <% end %>
 
-  <%= render "shared/user_go" %>
+<%= render "shared/footer" %>

@@ -1,0 +1,17 @@
+<%= render "shared/header" %>
+
+<div class="users-index-contents">
+  <div class="greeting"> 
+    <div class="greeting-text">お疲れ様です！</div>
+    <div class="greeting-text"><%= current_user.nickname %><%= "さん" %></div>
+  </div>
+    <div class="users-index-title">~ユーザー一覧~</div>
+    <div class="users-index-item">
+    <% @users.each do |user| %>
+      <div class="user-index-list">
+        <%= link_to user.nickname, "#", class: "user-index-name" %>
+        <%# <%= link_to "グループになる", "#", class: "friendly-btn"%> 
+      </div>  
+    <% end %>
+    </div>
+</div>  
