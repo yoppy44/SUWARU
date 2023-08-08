@@ -69,3 +69,59 @@
 /* ログインページ */
 
 /* //ログインページ */
+
+/* ユーザー一覧ページ */
+
+.users-index-contents{
+  padding: 20px;
+}
+
+.greeting{
+  margin: 20px 0 30px;
+}
+
+.greeting-text{
+  font-weight: 700;
+}
+
+.users-index-title{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.users-index-item{
+  height: calc(100vh-20px);
+  width: 100%;
+  display: block;
+}
+
+.user-index-list{
+  height: auto;
+  width: 100%;
+  border: #333333 1px solid;
+  border-radius: 5px;
+  background-color: hwb(172 52% 8%);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.user-index-name{
+  text-decoration: none;
+  font-size: 40px;
+}
+
+/* .friendly-btn{
+  height: 30px;
+  text-decoration: none;
+  color: #333333;
+  font-weight: 600;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 2px 5px;
+  background-color: rgb(225, 230, 176);
+} */
+
+/* //ユーザー一覧ページ */

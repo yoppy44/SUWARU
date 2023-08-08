@@ -72,4 +72,5 @@ group :test do
 end
 
 gem "devise"
-gem 'pry-rails'
+gem "pry-rails"
+gem "rails-i18n"
