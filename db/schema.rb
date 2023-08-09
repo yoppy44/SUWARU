@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
   create_table "lines", charset: "utf8mb4", force: :cascade do |t|
     t.string "line_name", null: false
     t.string "station", null: false
-    t.date "ride_time", null: false
+    t.time "ride_time", null: false
     t.bigint "target_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
