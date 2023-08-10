@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
-  create_table "lines", charset: "utf8mb4", force: :cascade do |t|
+  create_table "lines", charset: "utf8", force: :cascade do |t|
     t.string "line_name", null: false
     t.string "station", null: false
     t.time "ride_time", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
     t.index ["target_id"], name: "index_lines_on_target_id"
   end
 
-  create_table "targets", charset: "utf8mb4", force: :cascade do |t|
+  create_table "targets", charset: "utf8", force: :cascade do |t|
     t.string "targets_name", null: false
     t.string "clothes", null: false
     t.integer "age", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
     t.index ["user_id"], name: "index_targets_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
