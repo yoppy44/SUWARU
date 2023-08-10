@@ -10,8 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_08_015314) do
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_075336) do
+  create_table "lines", charset: "utf8", force: :cascade do |t|
+    t.string "line_name", null: false
+    t.string "station", null: false
+    t.time "ride_time", null: false
+    t.bigint "target_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["target_id"], name: "index_lines_on_target_id"
+  end
+
+  create_table "targets", charset: "utf8", force: :cascade do |t|
+    t.string "targets_name", null: false
+    t.string "clothes", null: false
+    t.integer "age", null: false
+    t.string "resemble", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_targets_on_user_id"
+  end
+
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -24,4 +45,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_08_015314) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lines", "targets"
+  add_foreign_key "targets", "users"
 end

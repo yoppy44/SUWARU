@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
     it 'なまえが空では登録できない' do
       @user.nickname = ''
       @user.valid?
-      expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+      expect(@user.errors.full_messages).to include("なまえを入力してください")
     end
     it 'メールアドレスが空では登録できない' do
       @user.email = ''

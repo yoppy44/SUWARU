@@ -1,0 +1,77 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @target_line, url: targets_path, local: true do |f| %>
+  <%= render 'shared/error_messages2', model: @target_line %> 
+  <div class="form-contents">  
+    <div class='target-line-form'>
+      <div class="form-title-line">
+        <div class='form-title-text'>
+          人物像入力
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ニックネーム</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :targets_name, class:"input-default", id:"targetname", placeholder:"例) ドラえもん" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">服装</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :clothes, class:"input-default", id:"clothes", placeholder:"例) 黒のワンピ、ヴィトンのバック" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">年齢</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:age, Age.all, :id, :name, {}, {class:"select-box", id:"age"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">誰に似てる？</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :resemble, class:"input-default", id:"resemble", placeholder:"例) Ado" %>
+      </div>
+    </div>  
+    <div class='target-line-form'>
+      <div class="form-title-line">
+        <div class='form-title-text'>
+          路線情報入力
+        </div>
+      </div>  
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">路線名</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :line_name, class:"input-default", id:"line-name", placeholder:"電車名でもOK" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">降車駅</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :station, class:"input-default", id:"station", placeholder:"どこで降りたか？" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">降車時刻</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <div class='input-getting-off-wrap'>
+          <%= f.time_field :ride_time %>
+        </div>
+      </div>
+    </div>  
+    <div class='target-btn'>
+    <%= f.submit "情報を登録する" ,class:"target-red-btn" %>
+    </div>
+  </div>  
+<% end %>
+
+<%= render "shared/footer" %>
