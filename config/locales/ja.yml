@@ -8,6 +8,7 @@ ja:
       target_line:
         targets_name: ニックネーム
         clothes: 服装
+        age: 年齢
         resemble: 誰に似てる？
         line_name: 路線名
         station: 降車駅
