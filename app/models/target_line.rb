@@ -19,5 +19,8 @@ class TargetLine
     target = Target.create(targets_name: targets_name, clothes: clothes, age: age, resemble: resemble, user_id: user_id)
     Line.create(line_name: line_name, station: station, ride_time: ride_time, target_id: target.id)
   end  
-  
+
+  def strftime
+    save ride_time
+  end  
 end

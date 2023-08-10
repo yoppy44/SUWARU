@@ -10,6 +10,10 @@ class TargetsController < ApplicationController
 
   def create
     @target_line = TargetLine.new(target_params)
+    ride_time_string = params[:target_line][:ride_time]
+    ride_time = Time.parse(ride_time_string) if ride_time_string.present?
+
+    @target_line.ride_time = ride_time
     if @target_line.valid?
       @target_line.save
       redirect_to root_path
