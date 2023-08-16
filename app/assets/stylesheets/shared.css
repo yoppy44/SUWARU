@@ -73,3 +73,64 @@
 }
 
 /* //エラーメッセージ */
+
+/* ターゲット情報一覧 */
+
+.target-info{
+  width: 70%;
+  height: 100%;
+  margin-top: 20px;
+  color: #474747;
+  background: whitesmoke;
+  border-left: double 7px #4ec4d3;
+  border-right: double 7px #4ec4d3;
+}
+
+.target-info-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.target-info-station{
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.target-info-ride-time{
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.target-info-center{
+  width: 100%;
+  display: flex;
+}
+
+.target-info-center-left{
+  width: 50%;
+  display: block;
+  padding-left: 10px;
+}
+
+.target-info-cen{
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.target-info-center-right{
+  width: 50%;
+  display: block;
+  padding-right: 10px;
+}
+
+.target-info-footer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.target-info-line-name{
+  font-weight: 200;
+}
+/* //ターゲット情報一覧 */

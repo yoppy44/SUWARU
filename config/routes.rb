@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   root to: "users#index"
   resources :users, only: [:index]
   resources :targets, only: [:index, :new, :create]
-  resources :lines, only: [:index, :create]
+  resources :lines, only: [:index, :create] do
+    collection do
+      get 'search'
+    end
+  end  
 end
