@@ -3,7 +3,7 @@ class CreateTargets < ActiveRecord::Migration[7.0]
     create_table :targets do |t|
       t.string     :target_name, null: false
       t.string     :clothes,      null: false
-      t.integer    :age,          null: false
+      t.integer    :age_id,          null: false
       t.string     :resemble,     null: false
       t.references :user,         null: false, foreign_key: true
       t.string     :line_name, null: false

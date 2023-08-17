@@ -132,7 +132,7 @@
 
 /* //ターゲット投稿ページ */
 
-/* ターゲット一覧・検索ページ */
+/* ターゲット検索ページ */
 
 .search-form {
   text-align: center;
@@ -152,40 +152,6 @@
   background-color: aquamarine;
 }
 
-
-.line-index-content{
-  padding: 20px;
-}
-
-.line-index-title{
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.line-index-item{
-  height: calc(100vh-20px);
-  width: 100%;
-  display: block;
-}
-
-.line-index-list{
-  height: auto;
-  width: 100%;
-  border: #333333 1px solid;
-  border-radius: 5px;
-  background-color: hwb(100 66% 12%);
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-}
-
-.line-index-name{
-  text-decoration: none;
-  font-size: 40px;
-}
-
 .contents-row{
   display: flex;
   justify-content: center;
@@ -193,4 +159,78 @@
   padding: 0 15%;
 }
 
-/* //ターゲット一覧・検索ページ */
+.target-info{
+  width: 70%;
+  height: 100%;
+  margin-top: 20px;
+  padding: 30px 0;
+  color: #474747;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxoF-QL63iV43po4Ohg_no2fyEIQjNhGGuXA&usqp=CAU);
+  background-size: contain;
+}
+
+.target-info-front{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(146, 243, 122);
+}
+
+.target-info-header{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+}
+
+.target-info-station{
+  font-size: 35px;
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.target-info-ride-time{
+  font-size: 30px;
+  font-weight: 900;
+  background-color: transparent;
+}
+
+.target-info-center{
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+}
+
+.target-info-center-left{
+  width: 50%;
+  display: block;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+.target-info-cen{
+  font-size: 20px;
+  font-weight: 700;
+  background-color: transparent;
+}
+
+.target-info-center-right{
+  width: 50%;
+  display: block;
+  padding-right: 10px;
+  background-color: transparent;
+}
+
+.target-info-footer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  background-color: transparent;
+}
+
+.target-info-line-name{
+  font-weight: 600;
+  background-color: transparent;
+}
+
+/* //ターゲット検索ページ */

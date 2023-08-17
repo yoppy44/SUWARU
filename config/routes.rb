@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "users#index"
   resources :users, only: [:index]
-  resources :targets, only: [:index, :new, :create]
-  resources :lines, only: [:index, :create] do
+  resources :targets, only: [:index, :new, :create] do
     collection do
       get 'search'
     end

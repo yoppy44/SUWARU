@@ -1,43 +1,45 @@
 <%= render "shared/header" %>
 
-<%= form_with(url: search_lines_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+<%= form_with(url: search_targets_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "見たい路線を入力してね", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 <div class="contents-row">
-  <% @lines.each do |line| %>
+  <% @targets.each do |target| %>
     <div class="target-info">
-      <div class="target-info-header">
-        <div class="target-info-station">
-          <%= line.station %>
-        </div>  
-        <div class="target-info-ride-time">
-          <%= line.ride_time.strftime("%H:%M") %>
-        </div>  
-      </div>
-      <div class="target-info-center">
-        <div class="target-info-center-left">
-          <div class="target-info-cen">
-            <%= @target.targets_name %>
+      <div class="target-info-front">
+        <div class="target-info-header">
+          <div class="target-info-station">
+            <%= target.station %>
+          </div>  
+          <div class="target-info-ride-time">
+            <%= target.ride_time.strftime("%H:%M") %>
+          </div>  
+        </div>
+        <div class="target-info-center">
+          <div class="target-info-center-left">
+            <div class="target-info-cen">
+              <%= target.target_name %>
+            </div>
+            <div class="target-info-cen">
+              <%= target.clothes %>
+            </div>
           </div>
-          <div class="target-info-cen">
-            年齢
+          <div class="target-info-center-right">
+            <div class="target-info-cen">
+              <%= target.age.name %>
+            </div>
+            <div class="target-info-cen">
+              <%= target.resemble %>に似てる
+            </div>
           </div>
         </div>
-        <div class="target-info-center-right">
-          <div class="target-info-cen">
-            服装
-          </div>
-          <div class="target-info-cen">
-            似てる
+        <div class="target-info-footer">
+          <div class="target-info-line-name">
+            <%= target.line_name %>
           </div>
         </div>
-      </div>
-      <div class="target-info-footer">
-        <div class="target-info-line-name">
-          路線名
-        </div>
-      </div>
+      </div>  
     </div>
   <% end %>
 </div>

@@ -13,7 +13,6 @@ class TargetsController < ApplicationController
     @target = Target.new(target_params)
     ride_time_string = params[:target][:ride_time]
     ride_time = Time.parse(ride_time_string) if ride_time_string.present?
-
     @target.ride_time = ride_time
     if @target.valid?
       @target.save
@@ -31,7 +30,7 @@ class TargetsController < ApplicationController
   private
 
   def target_params
-    params.require(:target).permit(:targets_name, :clothes, :age, :resemble, :line_name, :station, :ride_time).merge(user_id: current_user.id)
+    params.require(:target).permit(:target_name, :clothes, :age_id, :resemble, :line_name, :station, :ride_time).merge(user_id: current_user.id)
   end
  
 end

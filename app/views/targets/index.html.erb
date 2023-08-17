@@ -14,7 +14,7 @@
 <div class="line-index-content">
   <div class="line-index-title">~路線一覧~</div>
   <div class="line-index-item">
-    <% @lines.each do |line| %>
+    <% @target.each do |line| %>
       <div class="line-index-list">
         <%= link_to line.line_name, "#", class: "line-index-name" %>
       </div>  
