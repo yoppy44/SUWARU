@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
-<%= form_with model: @target_line, url: targets_path, local: true do |f| %>
-  <%= render 'shared/error_messages2', model: @target_line %> 
+<%= form_with model: @target, url: targets_path, local: true do |f| %>
+  <%= render 'shared/error_messages2', model: @target %> 
   <div class="form-contents">  
     <div class='target-line-form'>
       <div class="form-title-line">
@@ -14,7 +14,7 @@
           <label class="form-text">ニックネーム</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :targets_name, class:"input-default", id:"targetname", placeholder:"例) ドラえもん" %>
+        <%= f.text_area :target_name, class:"input-default", id:"targetname", placeholder:"例) ドラえもん" %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
@@ -28,7 +28,7 @@
           <label class="form-text">年齢</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:age, Age.all, :id, :name, {}, {class:"select-box", id:"age"}) %>
+        <%= f.collection_select(:age_id, Age.all, :id, :name, {}, {class:"select-box", id:"age"}) %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>

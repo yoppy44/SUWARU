@@ -6,7 +6,7 @@ ja:
   activemodel:    
     attributes:  
       target_line:
-        targets_name: ニックネーム
+        target_name: ニックネーム
         clothes: 服装
         age: 年齢
         resemble: 誰に似てる？

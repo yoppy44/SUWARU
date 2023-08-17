@@ -10,4 +10,7 @@ class Age < ActiveHash::Base
     {id: 8, name: '60代'},
     {id: 9, name: '70歳以上'}
   ]
+
+  include ActiveHash::Associations
+  has_many :targets
 end  

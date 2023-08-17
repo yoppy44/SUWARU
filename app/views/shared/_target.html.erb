@@ -1,0 +1,33 @@
+<div class="target-info">
+  <div class="target-info-header">
+    <div class="target-info-station">
+      <%= line.station %>
+    </div>  
+    <div class="target-info-ride-time">
+      <%= line.ride_time.strftime("%H:%M") %>
+    </div>  
+  </div>
+  <div class="target-info-center">
+    <div class="target-info-center-left">
+      <div class="target-info-cen">
+        <%= @target.targets_name %>
+      </div>
+      <div class="target-info-cen">
+        年齢
+      </div>
+    </div>
+    <div class="target-info-center-right">
+      <div class="target-info-cen">
+        服装
+      </div>
+      <div class="target-info-cen">
+        似てる
+      </div>
+    </div>
+  </div>
+  <div class="target-info-footer">
+    <div class="target-info-line-name">
+      路線名
+    </div>
+  </div>
+</div>

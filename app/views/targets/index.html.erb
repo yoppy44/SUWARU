@@ -1,0 +1,25 @@
+<div class="suwaru-header">
+  <div class="header-logo">~SUWARU~</div>
+  <ul class='user-menu'>
+    <% if user_signed_in? %>
+      <li><%= link_to "ターゲットを入力する", new_target_path, class: "user-menu-btn" %></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "user-menu-btn" %></li> 
+    <% end %> 
+  </ul>
+</div>
+<%= form_with(url: search_lines_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "路線を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+<div class="line-index-content">
+  <div class="line-index-title">~路線一覧~</div>
+  <div class="line-index-item">
+    <% @target.each do |line| %>
+      <div class="line-index-list">
+        <%= link_to line.line_name, "#", class: "line-index-name" %>
+      </div>  
+    <% end %>
+  </div>
+</div>  
+
+<%= render "shared/footer" %>
