@@ -4,8 +4,10 @@
   <%= form.text_field :keyword, placeholder: "見たい路線を入力してね", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
+
 <div class="contents-row">
   <% @targets.each do |target| %>
+  <% if current_user.id == target.user_id %>
     <div class="target-info">
       <div class="target-info-front">
         <div class="target-info-header">
@@ -19,15 +21,15 @@
         <div class="target-info-center">
           <div class="target-info-center-left">
             <div class="target-info-cen">
-              <%= target.target_name %>
+              ニックネーム：<%= target.target_name %>
             </div>
             <div class="target-info-cen">
-              <%= target.clothes %>
+              服装：<%= target.clothes %>
             </div>
           </div>
           <div class="target-info-center-right">
             <div class="target-info-cen">
-              <%= target.age.name %>
+              年齢：<%= target.age.name %>
             </div>
             <div class="target-info-cen">
               <%= target.resemble %>に似てる
@@ -41,6 +43,7 @@
         </div>
       </div>  
     </div>
+  <% end %>  
   <% end %>
 </div>
 

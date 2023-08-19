@@ -24,7 +24,6 @@ class TargetsController < ApplicationController
 
   def search
     @targets = Target.search(params[:keyword])
-    
   end  
 
   private
